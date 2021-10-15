@@ -16,7 +16,6 @@ int main()
 		std::cout << sizeOfScores << std::endl;
 		std::cout << "Capacity of Highscores vector: " << std::endl;
 		std::cout << capacityOfScores << std::endl;
-
 		if (!(std::cin >> newScore))
 		{
 			std::cin.clear();
@@ -28,6 +27,12 @@ int main()
 		{
 		case 0:
 		{
+			/*Part of excersice b2, there should be an easier
+			less complicated way to do this since I cannot insert
+			values with there is no push_back at the beginning*/
+			highscores.insert(highscores.begin() + 1, 100);
+			highscores.insert(highscores.begin() + 3, 200);
+			highscores.insert(highscores.end(), 300);
 			std::cout << "Scores listed below using the Iterator method" << std::endl << std::endl;
 			for (auto it = highscores.begin(); it != highscores.end(); it++)
 			{
