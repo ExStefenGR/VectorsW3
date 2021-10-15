@@ -15,7 +15,7 @@ int main()
 		std::cout << "Size of Highscores vector: " << std::endl;
 		std::cout << sizeOfScores << std::endl;
 		std::cout << "Capacity of Highscores vector: " << std::endl;
-		std::cout << capacityOfScores << std::endl;
+		std::cout << capacityOfScores << std::endl << std::endl;
 		if (!(std::cin >> newScore))
 		{
 			std::cin.clear();
@@ -30,15 +30,23 @@ int main()
 			/*Part of excersice b2, there should be an easier
 			less complicated way to do this since I cannot insert
 			values with there is no push_back at the beginning*/
-			highscores.insert(highscores.begin() + 1, 100);
-			highscores.insert(highscores.begin() + 3, 200);
-			highscores.insert(highscores.end(), 300);
-			std::cout << "Scores listed below using the Iterator method" << std::endl << std::endl;
-			for (auto it = highscores.begin(); it != highscores.end(); it++)
+			if (sizeOfScores > 0)
 			{
-				std::cout << *it << std::endl;
+				highscores.insert(highscores.begin() + 1, 100);
+				highscores.insert(highscores.begin() + 3, 200);
+				highscores.insert(highscores.end(), 300);
+				std::cout << "Scores listed below using the Iterator method" << std::endl << std::endl;
+				for (auto it = highscores.begin(); it != highscores.end(); it++)
+				{
+					std::cout << *it << std::endl;
+				}
+				done = true;
 			}
-			done = true;
+			else
+			{
+				std::cout << "Cannot Iterate through no data!" << std::endl << std::endl;
+				break;
+			}
 		}
 		case 1:
 			if (sizeOfScores <= 0)
