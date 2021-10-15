@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-//Stefanos Triantafyllidis
+//Stefanos T
 //As a self-challenge I will not look at anything else other than the slides provided for the lecture
 int main()
 {
@@ -30,7 +30,7 @@ int main()
 			/*Part of excersice b2, there should be an easier
 			less complicated way to do this since I cannot insert
 			values with there is no push_back at the beginning*/
-			if (sizeOfScores > 0)
+			if (sizeOfScores > 1)
 			{
 				highscores.insert(highscores.begin() + 1, 100);
 				highscores.insert(highscores.begin() + 3, 200);
@@ -44,17 +44,19 @@ int main()
 			}
 			else
 			{
-				std::cout << "Cannot Iterate through no data!" << std::endl << std::endl;
-				break;
+				std::cout << "Cannot Iterate through 0, please add one more value" << std::endl << std::endl;
 			}
+			break;
 		}
 		case 1:
-			if (sizeOfScores <= 0)
+			if (sizeOfScores == 0)
 			{
 				std::cout << "Cannot remove more Scores!" << std::endl << std::endl;
-				break;
 			}
-			highscores.erase(highscores.end() - 1);
+			else
+			{
+				highscores.erase(highscores.end() - 1);
+			}
 			break;
 		default:
 			highscores.push_back(newScore);
